@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotating Fan Animation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#d8f3ff;
+}
+
+/* Fan Container */
+.fan{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* Rotating Blades */
+.blades{
+    position:relative;
+    width:220px;
+    height:220px;
+    animation:rotateFan 1.5s linear infinite;
+}
+
+/* Common Blade Style */
+.blade{
+    position:absolute;
+    width:40px;
+    height:100px;
+    background:#4CAF50;
+    border-radius:50px 50px 10px 10px;
+    left:90px;
+    top:10px;
+    transform-origin:20px 100px;
+}
+
+/* Individual Blades */
+.blade1{
+    transform:rotate(0deg);
+}
+
+.blade2{
+    transform:rotate(90deg);
+}
+
+.blade3{
+    transform:rotate(180deg);
+}
+
+.blade4{
+    transform:rotate(270deg);
+}
+
+/* Center Hub */
+.center{
+    position:absolute;
+    width:35px;
+    height:35px;
+    background:#444;
+    border-radius:50%;
+    left:92px;
+    top:92px;
+}
+
+/* Fan Stand */
+.stand{
+    width:15px;
+    height:180px;
+    background:#555;
+}
+
+/* Base */
+.base{
+    width:120px;
+    height:20px;
+    background:#333;
+    border-radius:10px;
+}
+
+/* Rotation Animation */
+@keyframes rotateFan{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="fan">
+
+    <div class="blades">
+
+        <div class="blade blade1"></div>
+        <div class="blade blade2"></div>
+        <div class="blade blade3"></div>
+        <div class="blade blade4"></div>
+
+        <div class="center"></div>
+
+    </div>
+
+    <div class="stand"></div>
+
+    <div class="base"></div>
+
+</div>
+
+</body>
+</html>

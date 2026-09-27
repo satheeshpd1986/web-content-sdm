@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiple Animations</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f2f2f2;
+    overflow:hidden;
+}
+
+.box{
+    width:120px;
+    height:120px;
+    background:red;
+    animation:
+        transformAnimation 4s infinite ease-in-out,
+        colorAnimation 3s infinite linear;
+}
+
+/* Rotation + Scaling + Movement */
+@keyframes transformAnimation{
+
+    0%{
+        transform:translateX(-250px) rotate(0deg) scale(1);
+    }
+
+    25%{
+        transform:translateX(0px) rotate(90deg) scale(1.2);
+    }
+
+    50%{
+        transform:translateX(250px) rotate(180deg) scale(1.5);
+    }
+
+    75%{
+        transform:translateX(0px) rotate(270deg) scale(1.2);
+    }
+
+    100%{
+        transform:translateX(-250px) rotate(360deg) scale(1);
+    }
+}
+
+/* Background Color Change */
+@keyframes colorAnimation{
+
+    0%{
+        background:red;
+    }
+
+    25%{
+        background:blue;
+    }
+
+    50%{
+        background:green;
+    }
+
+    75%{
+        background:orange;
+    }
+
+    100%{
+        background:red;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="box"></div>
+
+</body>
+</html>
